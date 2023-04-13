@@ -1,0 +1,62 @@
+
+到底学习什么？
+1、原理和体系结构（重要）
+
+
+MapReduce分布式计算模型
+=======================================
+问题：大数据的两个核心问题？
+		1、数据的存储
+		2、数据的计算：分布式的计算模型
+		
+Demo例子：工具：虚拟机 vmware 
+                Linux操作系统
+				安装介质：Hadoop、JDK
+				客户端：putty、secureCRT
+				eclipse
+
+一、什么是分布式计算？
+	1、问题的来源是什么？  PageRank问题（网页排名）
+	2、举例
+	3、思想：先拆分、再合并
+
+二、MapReduce的基本原理（非常、非常、非常重要）
+
+三、Demo：WordCount
+
+四、WordCount的处理流程
+
+五、开发自己的WordCount程序（项目实战）
+	Java程序
+	包含的jar包(4个)：
+	$HADOOP_HOME/share/hadoop/common/
+	$HADOOP_HOME/share/hadoop/common/lib
+	$HADOOP_HOME/share/hadoop/mapredudce
+	$HADOOP_HOME/share/hadoop/mapredudce/lib
+	
+六、MapReduce的高级功能：排序、分区、合并
+    核心：shuffle（洗牌）
+
+七、大数据课程体系：http://www.itstaredu.com/page/29 
+
+时间安排：
+1、直播课： 1、3、5晚上  从8点  ~ 10点半
+             一周：8课时
+
+2、答疑：非直播课时间  2,4,6,7
+
+为什么学大数据:
+企业：得数据者 得天下
+个人：钱
+
+
+
+
+
+
+
+
+
+
+
+
