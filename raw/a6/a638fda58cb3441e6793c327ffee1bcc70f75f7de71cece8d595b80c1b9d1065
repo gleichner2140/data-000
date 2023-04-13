@@ -1,0 +1,57 @@
+package demo;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class WordCountJob {
+
+	public static void main(String[] args) throws Exception {
+		// 主程序怎么写？
+		
+		//创建一个job
+		Configuration conf = new Configuration();
+		Job job = Job.getInstance(conf);
+		//任务的入口：main的类
+		job.setJarByClass(WordCountJob.class);
+		
+		//指定job的map和输出的数据类型(k2  v2)
+		job.setMapperClass(WordCountMapper.class);
+		job.setMapOutputKeyClass(Text.class);  //k2
+		job.setMapOutputValueClass(IntWritable.class); //v2
+		
+		
+		//指定job的reduce和输出的数据类型(k4 v4)
+		job.setReducerClass(WordCountReducer.class);
+		job.setOutputKeyClass(Text.class);  //key4
+		job.setOutputValueClass(IntWritable.class);  //value4
+				
+		//指定任务的HDFS的输入   HDFS的输出
+		FileInputFormat.setInputPaths(job, new Path(args[0]));
+		FileOutputFormat.setOutputPath(job, new Path(args[1]));
+		
+		//提交任务
+		job.waitForCompletion(true);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
